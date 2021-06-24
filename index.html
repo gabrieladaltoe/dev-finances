@@ -26,17 +26,26 @@
             <h2 class="sr-only">Balanço</h2>
 
             <div class="card">
-                <h3>Entradas</h3>
+                <h3>
+                    <span>Entradas</span>
+                    <img src="./src/img/entradas.png" alt="Imagem de entradas">
+                </h3>
                 <p>R$ 17.400,00</p>
             </div>
 
             <div class="card">
-                <h3>Saídas</h3>
+                <h3>
+                    <span>Saídas</span>
+                    <img src="./src/img/saidas.png" alt="Imagem de saídas">
+                </h3>
                 <p>R$ 1.259,00</p>
             </div>
 
             <div class="card total">
-                <h3>Total</h3>
+                <h3>
+                    <span>Total</span>
+                    <img src="./src/img/total.png" alt="Imagem de saídas">
+                </h3>
                 <p>R$ 16.141,00</p>
             </div>
 
@@ -44,7 +53,9 @@
 
 
         <section id="transaction">
-            <h2>Transações</h2>
+            <h2 class="sr-only">Transações</h2> <!--sr é screen reader only-->
+
+            <a href="#" class="button new">+ Nova Transação</a>
 
             <table id="data-table">
                 <thead>
@@ -52,6 +63,7 @@
                         <th>Descrição</th>
                         <th>Valor</th>
                         <th>Data</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -59,18 +71,27 @@
                         <td class="description">Luz</td>
                         <td class="expense">R$ 12.000,00</td>
                         <td class="date">13/04/2020</td>
+                        <td>
+                            <img src="./src/img/delete.png" alt="Imagem-deletar-linha">
+                        </td>
                     </tr>
 
                     <tr>
                         <td class="description">Desenvolvimento de site</td>
                         <td class="income">R$ 12.000,00</td>
                         <td class="date">13/04/2020</td>
+                        <td>
+                            <img src="./src/img/delete.png" alt="Imagem-deletar-linha">
+                        </td>
                     </tr>
 
                     <tr>
                         <td class="description">Internet</td>
                         <td class="expense">R$ 12.000,00</td>
                         <td class="date">13/04/2020</td>
+                        <td>
+                            <img src="./src/img/delete.png" alt="Imagem-deletar-linha">
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -79,10 +100,61 @@
 
     </main>
 
+
+    <div class="modal-overlay">
+        <div class="modal">
+            <div id="form">
+                <h2>Nova Transação</h2>
+                <form action="">
+                    <div class="input-group">
+                        <label for="description" class="sr-only">Descrição</label>
+                        <input 
+                            type="text" 
+                            name="description" 
+                            id="description"
+                            placeholder="Descrição"
+                            />
+                    </div>
+
+                    <div class="input-group">
+                        <label for="amount" class="sr-only">Valor</label>
+                        <input 
+                            type="number" 
+                            step="0.01"
+                            name="amount" 
+                            id="amount"
+                            placeholder="0,00"
+                            />
+                            <small class="help">Use o sinal - (negativo) para despesas e ,  (vírgula) para casas decimais</small>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="date" class="sr-only">Data</label>
+                        <input 
+                            type="date" 
+                            name="date" 
+                            id="date"
+                            placeholder="01/01/2021"
+                            />
+                    </div>
+
+                    <div class="input-group actions">
+                        <a href="#" class="button cancel">Cancelar</a>
+                        <button class="button">Salvar</button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+
     <footer>
         <p>Dev Finances $</p>
     </footer>
 
+    <script src="./script.js"></script>
 
 </body>
 
