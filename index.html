@@ -55,7 +55,7 @@
         <section id="transaction">
             <h2 class="sr-only">Transações</h2> <!--sr é screen reader only-->
 
-            <a href="#" class="button new">+ Nova Transação</a>
+            <a href="#" class="button new" onclick="Modal.open()">+ Nova Transação</a>
 
             <table id="data-table">
                 <thead>
@@ -140,7 +140,7 @@
                     </div>
 
                     <div class="input-group actions">
-                        <a href="#" class="button cancel">Cancelar</a>
+                        <a href="#" class="button cancel" onclick="Modal.close()">Cancelar</a>
                         <button class="button">Salvar</button>
                     </div>
 
